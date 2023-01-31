@@ -29,7 +29,6 @@ private:
     Ui::Configuracion *ui;
     QColor m_color;
     int m_dimension;
-
     void setWidgetColor();
 };
 

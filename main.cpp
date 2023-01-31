@@ -1,3 +1,7 @@
+/********************************
+ * Nombre: Mishelle Menendez    *
+ * Cedula:1728963982            *
+ ********************************/
 #include "juego.h"
 
 #include <QApplication>

@@ -17,7 +17,9 @@ Configuracion::~Configuracion()
 
 void Configuracion::on_btnColor_released()
 {
-
+    m_color = QColorDialog::getColor(m_color,
+                                        this,
+                                        "Color del Circulo");
 }
 
 void Configuracion::setColor(const QColor &newColor)
@@ -37,6 +39,7 @@ void Configuracion::setWidgetColor()
     int b = m_color.blue();
     QString style = "background-color: rgb(" + QString::number(r) + ", " + QString::number(g) + ", " + QString::number(b) + ")";
     ui->wigetColor->setStyleSheet(style);
+
 }
 
 const QColor &Configuracion::color() const

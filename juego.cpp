@@ -1,11 +1,18 @@
 #include "juego.h"
 #include "ui_juego.h"
 
+#include <QPainter>
+#include <QFileDialog>
+#include <QMessageBox>
+
 Juego::Juego(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Juego)
 {
     ui->setupUi(this);
+    m_lienzo = QPixmap(500,500);
+    this->dibujar();
+
     QPoint centro = ui->marco->geometry().center();
     m_circulo = new Circulo();
     m_circulo->setX(centro.x());
@@ -20,6 +27,7 @@ Juego::~Juego()
 
 void Juego::on_btnArriba_released()
 {
+
 
 }
 
@@ -56,5 +64,22 @@ void Juego::on_actionConfigraci0n_triggered()
 void Juego::on_actionSalir_triggered()
 {
     this->close();
+}
+
+void Juego::dibujar()
+{
+    Configuracion a;
+    m_lienzo.fill(Qt::white);
+    QPoint centro = ui->marco->geometry().center();
+    m_circulo = new Circulo();
+    QPainter painter(&m_lienzo);
+    QPen pincel;
+    pincel.setColor(a.color());
+    pincel.setWidth(40);
+    painter.setPen(pincel);
+    painter.drawEllipse(m_circulo->getYpos(), m_circulo->getXpos(),m_circulo->getYpos(), m_circulo->getXpos());
+
+
+
 }
 
