@@ -7,9 +7,8 @@
 Circulo::Circulo()
     :QPoint(0,0)
 {
-    setYpos(175);
-    setxpos(175);
-
+    setYpos(50);
+    setxpos(50);
 }
 
 Circulo::Circulo(int xpos, int ypos)

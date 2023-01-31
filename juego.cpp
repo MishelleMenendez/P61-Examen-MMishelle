@@ -12,7 +12,7 @@ Juego::Juego(QWidget *parent)
     ui->setupUi(this);
     m_lienzo = QPixmap(500,500);
     this->dibujar();
-
+    ui->marco->setPixmap(m_lienzo);
     QPoint centro = ui->marco->geometry().center();
     m_circulo = new Circulo();
     m_circulo->setX(centro.x());
@@ -28,25 +28,26 @@ Juego::~Juego()
 void Juego::on_btnArriba_released()
 {
 
+    dibujar();
 
 }
 
 
 void Juego::on_btnAbajo_released()
 {
-
+    dibujar();
 }
 
 
 void Juego::on_btnIzqueirda_released()
 {
-
+    dibujar();
 }
 
 
 void Juego::on_btnDerecha_released()
 {
-
+    dibujar();
 }
 
 
@@ -78,8 +79,6 @@ void Juego::dibujar()
     pincel.setWidth(40);
     painter.setPen(pincel);
     painter.drawEllipse(m_circulo->getYpos(), m_circulo->getXpos(),m_circulo->getYpos(), m_circulo->getXpos());
-
-
 
 }
 

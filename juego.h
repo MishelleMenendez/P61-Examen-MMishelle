@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QPen>
+#include <QPoint>
 #include <QPainter>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -34,6 +36,8 @@ private slots:
 
     void on_actionSalir_triggered();
 
+    void on_marco_customContextMenuRequested(const QPoint &pos);
+
 private:
     Ui::Juego *ui;
     QPixmap m_lienzo;
@@ -41,8 +45,6 @@ private:
     Circulo *m_circulo;
     QPainter painter;
     QImage *m_Imagen;
-
-    bool m_Circulo;
     void dibujar();
 
 };
